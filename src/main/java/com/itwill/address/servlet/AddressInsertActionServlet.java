@@ -21,6 +21,7 @@ public class AddressInsertActionServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try {
 			/*
 			 * 0.요청객체encoding설정

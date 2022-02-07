@@ -31,6 +31,7 @@ public class AddressDetailServlet extends HttpServlet {
 			 *   http://localhost/addressSite/address_detail.do?no=5
 			 */
 			/*
+			 * 0.요청객체encoding설정
 			 * 1.파라메타받기
 			 * 2.AddressService객체생성
 			 * 3.AddressService객체 selectByNo(1) 메쏘드호출
@@ -62,11 +63,11 @@ public class AddressDetailServlet extends HttpServlet {
 			out.println("	<a href='address_main.do'>[메인]</a>");
 			out.println("	<a href='address_insert_form.do'>[주소록쓰기폼]</a>");
 			out.println("	<a href='address_list.do'>[주소록리스트]</a>");
-			out.println("	<a href='address_update_form.do?no=2'>[박경호님 주소록수정폼]</a>");
-			out.println("	<a href='address_delete_action.do?no=2'>박경호님삭제[GET]</a>");
+			out.println("	<a href='address_update_form.do?no=2'>["+address.getName()+"님 주소록수정폼]</a>");
+			out.println("	<a href='address_delete_action.do?no="+address.getNo()+"'>"+address.getName()+"님삭제[GET]</a>");
 			out.println("<form action='address_delete_action.do' method='post' style='display:inline;'>");
-			out.println("	<input type='hidden' name='no' value='2' readonly='readonly'>");
-			out.println("	<input type='submit' value='박경호님삭제[POST]'>");
+			out.println("	<input type='hidden' readonly='readonly'   name='no' value='"+address.getNo()+"'>");
+			out.println("	<input type='submit' value='"+address.getName()+"님삭제[POST]'>");
 			out.println("</form>");
 			out.println("</div>");
 			out.println("<p>");
